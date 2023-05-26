@@ -1,4 +1,4 @@
-module; 
+module;
 #include <spirv_reflect.h>
 #include <string>
 #include <string_view>
@@ -43,12 +43,13 @@ void Parse(
 
 	// Parse Fragment Shader
 	std::string frag = ReadBinary(fragment_shader);
-
+	
 	// Write to File
 	std::ofstream out(output_file);
+	
 	if (!out.is_open())
 	{
-		std::cerr << std::format("Failed to open file {}!\n", output_file);
+		//std::cerr << std::format("Failed to open file {}!\n", output_file);
 		std::exit(ERR_FAILED_TO_OPEN_FILE);
 	}
 
