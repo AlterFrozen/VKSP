@@ -2,6 +2,10 @@ add_library(VKSP_LIBRARIES INTERFACE)
 
 # SPIRV-Reflect
 if (NOT TARGET spirv-reflect-static)
+    message(STATUS "\nFinding Vulkan SDK")
+    find_package(Vulkan REQUIRED)
+    target_include_directories(VKSP_LIBRARIES INTERFACE ${Vulkan_INCLUDE_DIR})
+    
     message(STATUS "\nLoading SPIRV-Reflect (spirv-reflect-static)")
     OPTION(SPIRV_REFLECT_EXECUTABLE     "Build spirv-reflect executable" OFF)
     OPTION(SPIRV_REFLECT_EXAMPLES       "Build stripper examples" OFF)

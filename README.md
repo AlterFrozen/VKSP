@@ -1,2 +1,2 @@
 # VKSP
- Vulkan Shader Parser (ISO C++23)
+ Vulkan Shader Parser (ISO C++20)
